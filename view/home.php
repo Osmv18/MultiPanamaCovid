@@ -12,3 +12,30 @@
     </div>
   </form>
 </div>
+<div class="outer-container container">
+  <form action="?c=controller_load_excel" method="post" name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
+    <div>
+      <label>Cargar excel</label> 
+      <input type="file" name="file" id="file" accept=".xls,.xlsx" >
+      <button type="submit" id="submit" name="import" class="btn btn-success">Cargar</button>
+    </div>
+  </form>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
