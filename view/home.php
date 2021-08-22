@@ -11,15 +11,15 @@
       </div>
     </div>
   </form>
-</div>
-<div class="outer-container container">
-  <form action="?c=controller_load_excel" method="post" name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
-    <div>
-      <label>Cargar excel</label> 
-      <input type="file" name="file" id="file" accept=".xls,.xlsx" >
-      <button type="submit" id="submit" name="import" class="btn btn-success">Cargar</button>
-    </div>
-  </form>
+  <div class="outer-container container">
+    <form action="?c=controller_load_excel" method="post" name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
+      <div>
+        <label>Cargar excel</label> 
+        <input type="file" name="file" id="file" accept=".xls,.xlsx" >
+        <button type="submit" id="submit" name="import" class="btn btn-success">Cargar</button>
+      </div>
+    </form>
+  </div>
 </div>
 <table class="table">
   <thead>
