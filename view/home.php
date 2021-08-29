@@ -1,6 +1,6 @@
 <div class="container" id="bodyMain">
   <div class="container">
-    <!--<form method="POST" action="">
+    <form method="POST" action="">
       <div class="form-group">
         <div class="row">
           <div class="col">
@@ -12,30 +12,6 @@
         </div>
       </div>
     </form>
-    <div class="outer-container container">
-      <div class="row">
-        <div class="col-6">
-          <form action="?c=controller_load_excel" method="post" name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
-            <label>Cargar excel</label> 
-            <div class="input-group mb-3">
-              <input type="file" name="file" id="exc_archivo" class="form-control" accept=".xls,.xlsx,.csv" >
-              <button type="submit" id="submitFile" name="import" class="btn btn-success" onclick="cargarExcel()">Importar</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>-->
-    <div class="outer-container container">
-      <div class="row">
-        <div class="col-6">
-            <label>Cargar excel</label> 
-            <div class="input-group mb-3">
-              <input type="file" name="file" id="exc_archivo" class="form-control" accept=".xls,.xlsx,.csv" >
-              <button type="submit" id="submitFile" name="import" class="btn btn-success" click="cargarExcel()">Importar</button>
-            </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div class="container">
     <table class="table">
@@ -78,7 +54,7 @@ class MyReadFilter implements \PhpOffice\PhpSpreadsheet\Reader\IReadFilter {
 // Importar excel
 
 $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
-$inputFileName = $_FILES['excel'];
+$inputFileName = "DB/metadata_panama.xlsx";
 
 /**  Identify the type of $inputFileName  * */
 $inputFileType = \PhpOffice\PhpSpreadsheet\IOFactory::identify($inputFileName);
@@ -94,34 +70,11 @@ $cantidad = $spreadsheet->getActiveSheet()->toArray();
 foreach ($cantidad as $row) {
 
   if ($row[0] != "") {
-   /* $consulta = "INSERT INTO informacion(virus_name,accession_id,collection_date,location,host,additional_location,gender,"
+    /*$consulta = "INSERT INTO informacion(virus_name,accession_id,collection_date,location,host,additional_location,gender,"
             . "patient_age,patient_status,passage,specimen,additional_host,linage,clade,aa_substitutions) VALUES ('$row[0]','$row[1]',"
             . "'$row[2]','$row[3]','$row[4]','$row[5]','$row[6]','$row[7]','$row[8]','$row[9]','$row[10]','$row[11]',"
             . "'$row[12]','$row[13]','$row[14]');";
     $result = $conexion->query($consulta);*/
-    echo $row[0]." - ";
   }
 }
 ?>
-<script>
-function cargarExcel() {
-    let archivo = document.getElementById('exc_archivo').value;
-    if (archivo.length === 0) {
-      return Swal.fire("Mensaje de advertencia","Seleccione un archivo", "warning");
-    }
-    let formData = new FormData();
-    let excel = $("#exc_archivo")[0].file[0];
-    formData.append('excel',excel);
-    $.ajax({
-      url:'home.php',
-      type:'POST',
-      data: formData,
-      contentType: false,
-      processData: false,
-      sucess: function(resp){
-        alert(resp);
-      }
-    });
-    return false;
-}
-</script>
