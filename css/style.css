@@ -11,3 +11,7 @@ and open the template in the editor.
 #bodyMain {
   margin-top: 15px;
 }
+
+#submitFile {
+  width: 125px;
+}
