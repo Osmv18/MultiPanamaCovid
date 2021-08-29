@@ -1,7 +1,7 @@
 <?php
 
-include_once 'model/data_excel.php';
+include_once 'model/information.php';
 
 if(INPUT_POST){
-  
+  $infoDB = new 
 }
