@@ -1,7 +1,6 @@
 <?php
 
 include_once 'model/information.php';
-
-if(INPUT_POST){
-  $infoDB = new 
-}
+$infoDB = new information();
+$rows_data = $infoDB->read();
+include 'view/home.php';

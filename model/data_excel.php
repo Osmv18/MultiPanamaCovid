@@ -33,11 +33,11 @@ $cantidad = $spreadsheet->getActiveSheet()->toArray();
 foreach ($cantidad as $row) {
 
   if ($row[0] != "") {
-    /*$consulta = "INSERT INTO informacion(virus_name,accession_id,collection_date,location,host,additional_location,gender,"
+    $consulta = "INSERT INTO informacion(virus_name,accession_id,collection_date,location,host,additional_location,gender,"
             . "patient_age,patient_status,passage,specimen,additional_host,linage,clade,aa_substitutions) VALUES ('$row[0]','$row[1]',"
             . "'$row[2]','$row[3]','$row[4]','$row[5]','$row[6]','$row[7]','$row[8]','$row[9]','$row[10]','$row[11]',"
             . "'$row[12]','$row[13]','$row[14]');";
-    $result = $conexion->query($consulta);*/
+    $result = $conexion->query($consulta);
   }
 }
 ?>

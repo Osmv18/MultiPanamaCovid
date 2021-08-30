@@ -17,7 +17,7 @@
     if (filter_input(INPUT_GET, 'c')) {
       include "controller/" . filter_input(INPUT_GET, 'c') . ".php";
     } else {
-      include 'view/home.php';
+      include 'controller/controller_load_excel.php';
     }
     ?>
     </main>
