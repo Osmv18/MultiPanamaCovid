@@ -61,4 +61,27 @@ class information {
     }
     return $rows;
   }
+  
+  public function readSearch($where,$limit) {
+    $rows = [];
+    try {
+      $sql = "SELECT * FROM informacion";
+      $pdo = new connection();
+      $pdo = $pdo->open();
+      if ($where) {
+        $sql .= $where . $limit;
+      }
+      $result = $pdo->query($sql);
+      foreach ($result->fetchAll() as $value) {
+        $rows [] = new information($value['virus_name'], $value['accession_id'], $value['collection_date'], $value['location'],
+                $value['host'],$value['additional_location'],$value['gender'],$value['patient_age'],$value['patient_status'],$value['passage'],
+                $value['specimen'],$value['additional_host'],$value['linage'],$value['clade'],$value['aa_substitutions'],$value['id']);
+      }
+    } catch (PDOException $ex) {
+      error_log("Error en la funcion" . __FUNCTION__ . " en el archivo" . __FILE__ . " con el error " . $ex->getMessage());
+    }
+    
+    
+    return $rows;
+  }
 }

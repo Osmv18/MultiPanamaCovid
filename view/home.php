@@ -1,19 +1,21 @@
 <div class="container" id="bodyMain">
   <div class="container">
-    <form method="POST" action="">
-      <div class="form-group">
-        <div class="row">
-          <div class="col">
-            <input type="filter" class="form-control" id="exampleInputFilter" aria-describedby="filterSearch" placeholder="Buscar">
-          </div>
-          <div class="col">
-            <button type="submit" class="btn btn-primary">Buscar</button>
-          </div>
-        </div>
-      </div>
+    <form method="POST">
+      <input type="text" placeholder="Nombre del virus" name="xname">
+      <select name="xgenero">
+        <option value="">Género</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Unknown">Unknown</option>
+      </select>
+      <select name="xregistros">
+        <option value="">N° Registros</option>
+        <option value="limit 3">3</option>
+        <option value="limit 6">6</option>
+        <option value="limit 15">15</option>
+      </select>
+      <button name="buscar" type="submit" class="btn btn-success">Buscar</button>                   
     </form>
-  </div>
-  <div class="container">
     <table class="table">
       <thead>
         <tr>
@@ -36,7 +38,7 @@
         </tr>
       </thead>
       <tbody>
-         <?php foreach ($rows_data as $rows) { ?>
+        <?php foreach ($rows_data as $rows) { ?>
         <tr>
           <th scope="row"><?php echo $rows->id ?></th>
           <td><?php echo $rows->virus_name ?></td>
@@ -55,7 +57,7 @@
           <td><?php echo $rows->clade ?></td>
           <td><?php echo $rows->aa_substitutions ?></td>
         </tr>
-         <?php }?>
+        <?php }?>
       </tbody>
     </table>
   </div>
