@@ -80,8 +80,6 @@ class information {
     } catch (PDOException $ex) {
       error_log("Error en la funcion" . __FUNCTION__ . " en el archivo" . __FILE__ . " con el error " . $ex->getMessage());
     }
-    
-    
     return $rows;
   }
 }

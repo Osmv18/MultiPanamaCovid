@@ -12,6 +12,7 @@ if (isset($_POST['buscar'])) {
     $where = " where virus_name like '" . $_POST['xname'] . "%' and gender= '" . $_POST['xgenero'] . "' ";
   }
   $rows_data = $infoDB->readSearch($where, $_POST['xregistros']);
+  $rows_count = count($rows_data);
 } else {
   $rows_data = $infoDB->read();
 }

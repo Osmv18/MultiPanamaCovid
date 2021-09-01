@@ -16,6 +16,9 @@
       </select>
       <button name="buscar" type="submit" class="btn btn-success">Buscar</button>                   
     </form>
+    <section>
+      <h6>Resultados encontrados: <?php echo $rows_count ?></h6>
+    </section>
     <table class="table">
       <thead>
         <tr>
